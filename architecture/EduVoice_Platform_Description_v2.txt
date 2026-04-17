@@ -1,0 +1,487 @@
+**EduVoice Platform ** — Full Platform Description & Feature Specification  v2.0
+
+**EduVoice**
+
+The Education Community Platform
+
+*Full Platform Description **&** Feature Specification — Version 2.0*
+
+Includes: Landing Page · Authentication · Access Control · Four Spaces · Analytics · Roadmap
+
+| **For Teachers · Parents · Education Authorities** |
+| --- |
+
+# **1. Platform Vision ****&**** Purpose**
+
+EduVoice is a structured, professional online platform designed to bridge the communication gap between teachers, parents, and educational authorities. It gives every stakeholder in the education system a dignified, traceable, and purposeful space to speak, report, suggest, and celebrate — all anchored to real schools, real districts, and a real accountability structure.
+
+The platform is not a social media network. It is a civic tool built for the education community, operating within a government-adjacent framework. Every post, claim, and message is tied to a verified institution, ensuring that the data generated is meaningful, actionable, and trustworthy.
+
+| **Core Philosophy** Every voice in education deserves a structured channel — not a WhatsApp group, not a corridor conversation, not a buried email. School-level tagging ensures visibility for every post. Ministry officials, district supervisors, and school directors can filter, monitor, and respond to what is happening at their institution. Accountability is institutional, not personal. The platform protects individuals while surfacing systemic issues. |
+| --- |
+
+# **2. Who The Platform Is For**
+
+EduVoice serves five distinct user types, each with their own verified role, access level, and dedicated spaces:
+
+| **Feature** | **Description** |
+| --- | --- |
+| **Teachers** | Licensed educators working in public or private schools. Can post in Teachers' Lounge, file Formal Claims, and receive Gratitude posts. |
+| **Parents** | Parents or legal guardians of enrolled students. Can post in Parents' Forum and the Gratitude Wall. |
+| **School Administrators** | Principals and deputy principals. Read-only across all spaces at their school. Can post official responses to claims and parent concerns. |
+| **District Supervisors** | Regional education officers. Access to district-wide analytics dashboard and escalated claims. |
+| **Ministry Officials** | National-level access. Full read access everywhere plus the national analytics dashboard. Cannot post content. |
+
+# **3. Landing Page (Public — Pre-Login)**
+
+The landing page is the first experience for any visitor who is not yet authenticated. It must accomplish three things in under ten seconds: explain what EduVoice is, establish institutional credibility, and direct the right person to the right registration path. The tone is calm, civic, and professional — not startup-flashy.
+
+## **3.1  Navbar**
+
+Fixed to the top of the page with a white background and a 1px bottom border. Left side: EduVoice logo and wordmark. Right side: 'Sign In' ghost button and 'Join EduVoice' filled blue button. On mobile the two buttons collapse into a hamburger menu.
+
+## **3.2  Hero Section**
+
+Centred layout with generous vertical padding. The main headline reads: 'Every voice in education deserves to be heard.' The subheadline reads: 'EduVoice gives teachers, parents, and education authorities a structured, professional space to speak, report, celebrate, and improve schools together.'
+
+Two CTA buttons sit side by side below the subheadline: 'Join as a Teacher' (blue, filled) and 'Join as a Parent' (green, filled). Both route to the registration page with the role pre-selected. A small trust line below the buttons reads: 'Used in [X] schools across [Y] districts · Verified accounts only.'
+
+## **3.3  Four Spaces Section**
+
+Section heading: 'Four dedicated spaces, one platform.' Four cards arranged in a single row on desktop and a 2×2 grid on mobile. Each card has a left border accent in the space's color, the space name in bold, and one sentence describing the space's purpose. Cards are informational only — not clickable.
+
+| **Feature** | **Description** |
+| --- | --- |
+| **Teachers****'**** Lounge** | A safe, professional space for teachers to share experiences, challenges, and reflections with colleagues. Blue accent. |
+| **Parents****'**** Forum** | A structured space for parents to raise concerns, make suggestions, and describe their child's school experience. Green accent. |
+| **Formal Claims** | A traceable, official channel for teachers to file documented complaints to the relevant educational authorities. Red accent. |
+| **Gratitude Wall** | A public, celebratory space where parents thank teachers by name for exceptional support and care. Purple accent. |
+
+## **3.4  Stats Bar**
+
+A full-width light gray band displaying four platform statistics centred: '1,200+ Teachers', '3,800+ Parents', '47 Formal Claims Filed', '218 Thank-yous Sent'. Numbers displayed large and bold with the label in small text below.
+
+## **3.5  Why EduVoice Section**
+
+Three columns with icons and short copy, using the neutral color palette only:
+
+- Structured — not a chat group. Every post has a category, a school tag, and a clear purpose.
+
+- Traceable — every post is linked to a verified school and a verified user. Anonymous options exist but the institution is always shown.
+
+- Safe — posts are moderated by community moderators. Anonymous posting is available for sensitive situations.
+
+## **3.6  Final CTA Banner**
+
+Full-width banner with a dark blue background (#1A5276) and white text. Headline: 'Ready to make your school's voice count?' Two white-outlined buttons: 'Join as a Teacher' and 'Join as a Parent'.
+
+## **3.7  Footer**
+
+Three columns: Logo and tagline on the left, navigation links in the centre (About, Contact, Moderation Policy, Ministry Guidelines), and legal links on the right (Privacy Policy, Terms of Use). A copyright line runs below. Dark background (#1C2833) with white text.
+
+# **4. Authentication — Login ****&**** Account Creation**
+
+Authentication is the gateway to the platform. Because EduVoice is a verified community tool, the registration flow is more structured than a typical app — each role goes through a role-appropriate verification step before gaining full posting access.
+
+## **4.1  Login Page  (/login)**
+
+A clean centred card on a light gray background. EduVoice logo sits at the top of the card. Fields: email input, password input with a show/hide toggle, and a 'Remember me' checkbox. A full-width blue 'Sign In' button sits below. A divider line separates it from a 'Continue with institutional email' button (supporting Google Workspace and Microsoft 365 — this auto-verifies teacher status for schools using government-issued email domains).
+
+Below the card: 'Don't have an account? Join EduVoice' link. 'Forgot password?' link appears directly below the password field.
+
+Forgot password flow: a separate page at /forgot-password with a single email input and 'Send reset link' button. On submit, a success message is shown regardless of whether the email exists, to prevent account enumeration.
+
+## **4.2  Registration Flow  (/register)**
+
+A multi-step form presented on a single page with animated transitions between steps. A step indicator at the top shows the current step as a labeled progress dot trail.
+
+### **Step 1 — Choose Your Role**
+
+Two large selectable cards displayed side by side. Left card: teacher icon, 'I am a Teacher', descriptor sentence. Right card: parent icon, 'I am a Parent', descriptor sentence. Selecting a card highlights it with a blue border and a checkmark. A smaller third option below reads: 'I am a School Administrator — request access' and routes to a contact form rather than self-registration, since administrator accounts are provisioned directly. The 'Next' button only activates once a role is selected.
+
+### **Step 2 — Personal Information**
+
+Fields: full name, email address, password (with a strength indicator bar), confirm password, and an optional phone number field. 'Next' button and a 'Back' link.
+
+### **Step 3 — Your School**
+
+Heading: 'Which school are you part of?' A live-search input filters the official school database as the user types. Results appear as a scrollable list showing school name, district, and city for each entry. Selecting a school shows a confirmation chip below the search input with the school name and a blue checkmark. A 'Can't find your school? Contact us' link sits at the bottom for edge cases. 'Next' button and a 'Back' link.
+
+### **Step 4 — Verification (Role-Dependent)**
+
+For Teachers: Two selectable options are shown as cards. Option A: 'Enter your educator registration number' — a single text input. Option B: 'Verify via institutional email' — an input for their @education.gov email address with a 'Send verification email' button. A note below reads: 'Your account will be in Pending status until verification is confirmed. You can browse the platform but cannot post.' Submit button.
+
+For Parents: Fields for the child's full name and their national school enrollment number. Explanatory text: 'This links your account to a verified enrolled student. Your child's data is never shared publicly.' Submit button.
+
+### **Step 5 — Success Screen**
+
+A green checkmark animation plays on arrival. Heading: 'Welcome to EduVoice, [First Name].' Subtext differs by role: teachers see 'Your account is pending verification. We will notify you by email once confirmed — usually within 24 hours.' Parents see 'Your account is being reviewed. You can start exploring the platform now.' A single button 'Explore EduVoice' routes to the main app.
+
+## **4.3  Account States**
+
+| **Feature** | **Description** |
+| --- | --- |
+| **Pending** | Account created, verification not yet confirmed. User can browse all public content but post and comment buttons are replaced with a 'Verify your account to post' prompt. |
+| **Verified** | Verification confirmed. Full access to all permitted spaces and actions for the user's role. |
+| **Suspended** | Account suspended by a moderator. User can log in but sees a suspension notice and cannot interact with any content. |
+| **Archived** | Account deactivated by the user. Data retained for legal compliance but the account cannot be logged into. |
+
+# **5. Access Control System**
+
+EduVoice uses a role-based access control (RBAC) system with five permission levels. Role is assigned at registration and cannot be self-changed after verification. Changes require a support request and re-verification.
+
+## **5.1  Permission Matrix**
+
+The table below shows what each role can do in each of the four spaces:
+
+| **Role** | **Teachers****'**** Lounge** | **Parents****'**** Forum** | **Formal Claims** | **Gratitude Wall** |
+| --- | --- | --- | --- | --- |
+| **Teacher** | Post + Comment | Read only | Post + File | Read only |
+| **Parent** | Read only | Post + Comment | Read only | Post only |
+| **School Admin** | Read only | Read + Respond | Read + Respond | Read only |
+| **District Supervisor** | Read only | Read only | Read + Escalate | Read only |
+| **Ministry Official** | Read only | Read only | Full access | Read only |
+
+## **5.2  UI Enforcement Rules**
+
+Access control is enforced at the interface level — restricted actions are not just disabled, they are hidden entirely to avoid confusion and frustration:
+
+- The '+ New Post' button only appears in spaces where the logged-in role is permitted to post. It is absent from the topbar in restricted spaces — not grayed out, simply not rendered.
+
+- In spaces where a role can read but not comment, the comment input box is replaced with a contextual notice: 'Comments in this space are for [Teachers / Parents] only.'
+
+- The 'File a Claim' quick link in the right panel sidebar is only rendered for the TEACHER role.
+
+- The 'Post Thank-you' button on the Gratitude Wall is only rendered for the PARENT role.
+
+- School Administrators who post an official response receive an 'Official Response' badge displayed prominently on their reply, distinguishing it from community comments.
+
+- Pending accounts see all UI elements normally but clicking any post or comment action triggers an inline prompt: 'Complete your account verification to participate.'
+
+## **5.3  Role-Specific Landing Destinations**
+
+After login, each role is routed to the most relevant starting view:
+
+| **Feature** | **Description** |
+| --- | --- |
+| **Teacher** | Teachers' Lounge feed — the primary community space for their role. |
+| **Parent** | Parents' Forum feed — the primary community space for their role. |
+| **School Administrator** | School Profile page for their assigned school — immediate overview of activity at their institution. |
+| **District Supervisor** | District Dashboard — analytics view of all schools in their district. |
+| **Ministry Official** | National Analytics Dashboard — full platform overview with trend data. |
+
+## **5.4  Demo Role-Switcher**
+
+For demonstration and testing purposes, a floating role-switcher widget appears in the bottom-left corner of the app. It is a small pill button labeled 'Viewing as: Teacher' with a dropdown arrow. Clicking it opens a dropdown menu listing all five roles. Switching roles instantly updates the entire UI — navigation items appear and disappear, post buttons show and hide, and the default landing view changes. This allows stakeholders and developers to preview the platform from any perspective without managing multiple accounts.
+
+# **6. The School Tagging System**
+
+The school tag is the backbone of the entire platform. Every single post, claim, comment, and gratitude message is linked to a specific school from the moment it is created. This is not optional — it is built into the registration and posting flow.
+
+## **6.1  How It Works**
+
+- During registration, every user selects their school from an official, government-verified school database. The list is searchable by name, district, city, and school code.
+
+- Once selected, the school is permanently attached to the user profile. It cannot be changed without re-verification.
+
+- Every post automatically inherits the school tag. Users cannot publish without one.
+
+- The school tag appears as a visible badge on every post card, showing the school name and district.
+
+## **6.2  What School Tagging Enables**
+
+- School Profile Pages: each school has a summary page showing aggregated activity — open claims, recent parent concerns, trending topics, and gratitude count.
+
+- District Dashboards: regional supervisors can view all posts across every school in their district, filtered by space.
+
+- Automatic Alerts: if a school accumulates more than a defined threshold of formal claims within 30 days, a notification is automatically sent to the responsible district office.
+
+- Anonymous posting with school tag: in sensitive situations the user's name is hidden but the school tag remains visible. Accountability is preserved without personal risk.
+
+# **7. The Four Community Spaces**
+
+EduVoice is organized into four distinct spaces, each with its own purpose, tone, and posting rules. All four are school-tagged. Users see posts from all schools by default but can filter to their own school or district.
+
+## **7.1  Teachers****'**** Lounge**
+
+| **Space Identity** Purpose: A safe, professional space for teachers to share their experiences, challenges, stress, and reflections. Who can post: Verified teachers only. Who can comment: Verified teachers and verified school administrators. Tone: Warm, collegial, professional. Not a complaints board — a staff room. |
+| --- |
+
+### **Post Tags**
+
+| **Feature** | **Description** |
+| --- | --- |
+| **Burnout** | Posts about stress, exhaustion, or emotional difficulty in the job. |
+| **Pedagogy** | Teaching methods, lesson design, classroom strategies. |
+| **Student Welfare** | Concerns about individual or group student wellbeing. |
+| **Policy Impact** | How government or school policy decisions affect teaching. |
+| **Achievement** | Positive outcomes, student success stories, personal wins. |
+| **Resource Gap** | Missing materials, outdated equipment, underfunded classrooms. |
+
+### **Key Features**
+
+- Posts can be set to anonymous within the school tag — name hidden, school still shown.
+
+- Peer support reactions: 'I feel this', 'You are not alone', 'Thank you for sharing' — instead of a generic like.
+
+- Pinned posts: moderators can pin widely resonant posts to the top of the feed.
+
+- Weekly Prompt: a moderated weekly discussion question posted to encourage community dialogue.
+
+## **7.2  Parents****'**** Forum**
+
+| **Space Identity** Purpose: A structured space for parents to raise concerns, share suggestions, and describe the school experience from their child's perspective. Who can post: Verified parents and guardians only. Who can comment: Verified parents and school administrators. Tone: Constructive and civic. Not a place to attack teachers — a place to improve the system. |
+| --- |
+
+### **Post Tags**
+
+| **Feature** | **Description** |
+| --- | --- |
+| **Academic Concern** | Learning difficulties, curriculum issues, assessment problems. |
+| **Wellbeing** | Child's social or emotional experience at school. |
+| **Infrastructure** | Physical condition of the school, facilities, transport. |
+| **Suggestion** | Constructive proposals for improving education quality. |
+| **Policy Question** | Questions about school rules, ministry decisions, or procedures. |
+| **Positive Feedback** | Good experiences worth sharing with the community. |
+
+### **Key Features**
+
+- School-filtering: parents can view only posts from their child's school or browse district-wide.
+
+- Upvoting: parents can upvote posts they relate to, surfacing widespread concerns to administrators' dashboards.
+
+- Official response flag: if an administrator has responded, the post gets a green 'Responded' badge.
+
+- Anonymous option available for sensitive concerns.
+
+## **7.3  Formal Claims**
+
+| **Space Identity** Purpose: A structured, traceable channel for teachers to file official complaints about systemic problems to the relevant educational authorities. Who can post: Verified teachers only. Who can comment: School administrators and ministry officials only — not public. Tone: Formal, documented, factual. This space is institutional, not emotional. |
+| --- |
+
+### **The Claim Form — 7 Steps**
+
+| **Feature** | **Description** |
+| --- | --- |
+| **Step 1: School ****&**** Role** | Automatically pre-filled from the verified profile. Cannot be altered. |
+| **Step 2: Claim Category** | Teacher selects: Unsafe Conditions / Missing Resources / Administrative Pressure / Harassment / Contract Issue / Other. |
+| **Step 3: Description** | Structured text with prompts: What happened? When? What steps have already been taken? What outcome is expected? |
+| **Step 4: Prior Steps** | Teacher confirms whether they have already raised the issue informally. |
+| **Step 5: Evidence Upload** | Optional: attach photos, emails, or official documents as supporting evidence. |
+| **Step 6: Visibility Setting** | Choose: Public (visible to all platform users) or Restricted (visible only to authorities and the teacher). |
+| **Step 7: Submit** | Claim is assigned a unique tracking number and timestamp. Teacher receives a confirmation email. |
+
+### **Claim Lifecycle Statuses**
+
+- Submitted — claim received, awaiting review.
+
+- Under Review — a district or ministry officer has opened and is investigating the claim.
+
+- Response Issued — an official response has been logged on the claim record.
+
+- Resolved — issue addressed, teacher has confirmed resolution.
+
+- Escalated — claim moved to a higher authority level.
+
+### **Key Features**
+
+- Every claim has a permanent record. Full history is retained even after resolution.
+
+- Community support: other teachers can quietly 'support' a public claim — a count that shows authorities how widespread the issue is.
+
+- Resolution timer: if a claim remains Submitted for more than 15 days, an automatic reminder is sent to the responsible office.
+
+## **7.4  Gratitude Wall**
+
+| **Space Identity** Purpose: A public, positive space where parents thank teachers by name for exceptional support, care, or impact on their child. Who can post: Verified parents only. Who can comment: Anyone on the platform. Tone: Warm, celebratory, personal. The most human space on the platform. |
+| --- |
+
+### **Key Features**
+
+- Teacher of the Month: the teacher with the most gratitude posts that calendar month is featured at the top of the space.
+
+- School recognition leaderboard: schools with the highest ratio of gratitude posts are highlighted on their School Profile page.
+
+- Teachers receive a direct notification when a gratitude post is published about them.
+
+- Ministry integration: outstanding gratitude records can feed into official teacher recognition and award programs.
+
+- Always public and never anonymous — a thank-you means more when it comes from a named person.
+
+# **8. Platform Design ****&**** User Experience**
+
+## **8.1  Visual Identity**
+
+EduVoice uses a clean, professional design language — flat surfaces, clear typography, generous whitespace. It should feel more like a government civic portal than a social media app. Each space has a distinct colour identity: Teachers' Lounge in Blue, Parents' Forum in Green, Formal Claims in Red, Gratitude Wall in Purple.
+
+## **8.2  Navigation Structure**
+
+- Left sidebar: space navigation, My Activity section, user profile summary at the bottom.
+
+- Main feed: posts in the selected space, filterable by school, district, topic tag, or date.
+
+- Right panel: community stats, trending topics, quick links to official resources.
+
+## **8.3  Routing Map**
+
+| **Feature** | **Description** |
+| --- | --- |
+| **/ (root)** | Landing page — public, unauthenticated. |
+| **/login** | Login page — public. |
+| **/register** | Multi-step registration — public. |
+| **/forgot-password** | Password reset request — public. |
+| **/app** | Main app shell — authenticated users only. |
+| **/app/lounge** | Teachers' Lounge feed. |
+| **/app/parents** | Parents' Forum feed. |
+| **/app/claims** | Formal Claims feed. |
+| **/app/gratitude** | Gratitude Wall feed. |
+| **/app/school/:id** | School Profile page. |
+| **/app/notifications** | Notifications centre. |
+| **/app/my-posts** | User's own post history. |
+| **/app/dashboard** | District or Ministry dashboard — SUPERVISOR and MINISTRY roles only. |
+
+Routing rules: unauthenticated users accessing any /app/* route are redirected to /login. Authenticated users visiting / or /login are redirected to their role-appropriate landing destination.
+
+## **8.4  Mobile Experience**
+
+On screens below 768px: both sidebars are hidden. A bottom navigation bar shows icons for the four spaces plus a profile icon. The '+ New Post' button becomes a floating action button in the bottom right corner, coloured to match the active space. The filter bar becomes a horizontally scrollable row of pills.
+
+# **9. Moderation ****&**** Safety**
+
+## **9.1  Community Moderators**
+
+Each space has volunteer community moderators — experienced educators or retired teachers — selected by the platform. They can pin posts, flag content for review, and issue informal warnings. They cannot delete posts without a second moderator's agreement.
+
+## **9.2  Reporting System**
+
+Any user can report any post. Report categories: Personal Attack, Misinformation, Irrelevant Content, or Threatening Language. Reports are reviewed within 24 hours. Posts are never automatically deleted — a human always makes the final call.
+
+## **9.3  Content Rules**
+
+- No naming individual teachers or students negatively in the Parents' Forum.
+
+- No political content unrelated to education policy.
+
+- No sharing of personal contact information.
+
+- Formal Claims must describe institutional situations, not personal conflicts.
+
+- Gratitude posts must name a real, verified teacher at the linked school.
+
+# **10. Analytics ****&**** Reporting Tools**
+
+EduVoice generates structured, real-time data from community activity. This data is surfaced through dashboards tailored to each authority level.
+
+## **10.1  School Director Dashboard**
+
+- All posts tagged to their school across all four spaces.
+
+- Open formal claims with current status and days elapsed.
+
+- Most upvoted parent concerns in the last 30 days.
+
+- Gratitude count and most-thanked teachers at their school.
+
+## **10.2  District Supervisor Dashboard**
+
+- School-by-school summary across all schools in the district.
+
+- Heat map of claim categories by school.
+
+- Trending topic tags across the district this month.
+
+- Schools with unresolved claims older than 15 days flagged for immediate attention.
+
+## **10.3  Ministry Analytics Dashboard**
+
+- National overview: total active teachers, parents, posts by space, claims by category.
+
+- Regional breakdown: filter all data by region, district, or school level.
+
+- Trend lines: post volume over time by category.
+
+- Resolution rate: percentage of formal claims resolved within 30 days, by district.
+
+- Export: all analytics exportable as PDF or spreadsheet reports.
+
+# **11. Additional Platform Features**
+
+## **11.1  Resource Library**
+
+Teachers can upload and share lesson plans, worksheets, teaching strategies, and classroom resources. Materials are tagged by subject, grade level, and school type. Gives teachers a professional development reason to return to the platform beyond reporting problems.
+
+## **11.2  Private Messaging**
+
+Teachers and school administrators can exchange private messages. Parents can message school administrators (not teachers directly, to protect teacher boundaries). All messages are logged for moderation. No anonymous private messaging.
+
+## **11.3  Weekly Discussion Prompt**
+
+Every Monday, a moderated discussion question is posted to the Teachers' Lounge and Parents' Forum. Examples: 'What does a good parent-teacher relationship look like?', 'What is the biggest barrier to student wellbeing in your school?'
+
+## **11.4  Notification System**
+
+| **Feature** | **Description** |
+| --- | --- |
+| **Reaction notification** | Your post received [N] reactions. |
+| **Comment notification** | Someone commented on your post in [Space]. |
+| **Claim status notification** | Your claim #[ID] has been updated to [Status]. |
+| **Official response notification** | An official response was added to a claim at your school. |
+| **Gratitude notification** | A parent posted a thank-you for you on the Gratitude Wall. |
+| **Alert notification** | Your school has received [N] formal claims this month — a district notification has been triggered. |
+
+## **11.5  Multilingual Support**
+
+Arabic and French from launch. All system messages, form labels, and official notifications are translated. Arabic triggers full right-to-left layout mode. User-generated content is not auto-translated but can be flagged for translation by moderators.
+
+# **12. Technical Overview**
+
+| **Feature** | **Description** |
+| --- | --- |
+| **Frontend** | React + TypeScript + Tailwind CSS. React Router for navigation. Zustand for state management. Lucide React for icons. Fully responsive — mobile-first. |
+| **Backend** | Node.js with Express or Django (Python). RESTful API with a GraphQL layer for analytics dashboards. |
+| **Database** | PostgreSQL as the primary relational database. Redis for caching sessions and notification queues. Full audit trail on all posts and claims. |
+| **Authentication** | JWT-based authentication. Role-based access control (RBAC) with five permission levels. Institutional email SSO via Google Workspace / Microsoft 365. |
+| **File Storage** | AWS S3 or equivalent for uploaded documents and evidence files. Files encrypted at rest. |
+| **Hosting** | Cloud-hosted on a government-approved provider if integrating officially with the Ministry. Data residency must remain within the relevant country. |
+| **School Database** | Synced with the official national school registry. Updated quarterly. Managed via a dedicated admin panel accessible only to Ministry IT staff. |
+
+# **13. Recommended Launch Roadmap**
+
+## **Phase 1 — Foundation (Months 1–3)**
+
+- Build landing page, authentication flows, and role-based registration with verification.
+
+- Build Teachers' Lounge and Gratitude Wall (lower risk, positive community builders).
+
+- Launch with one pilot district — volunteer teachers and parents.
+
+- Gather feedback, refine moderation rules and verification process.
+
+## **Phase 2 — Expansion (Months 4–6)**
+
+- Launch Parents' Forum with school tagging fully operational.
+
+- Build School Profile pages and School Director dashboard.
+
+- Onboard school administrators to the platform.
+
+- Launch district supervisor dashboards.
+
+## **Phase 3 — Full Platform (Months 7–12)**
+
+- Launch Formal Claims space after legal review of claim procedures.
+
+- Build Ministry analytics dashboard.
+
+- Open to all districts nationally.
+
+- Launch Resource Library and private messaging.
+
+- Publish first national education community report based on platform data.
+
+| **Final Note** EduVoice is more than a platform — it is a promise that every teacher's frustration will have a formal channel, every parent's concern will be visible and traceable, every exceptional educator will be publicly celebrated, and every systemic problem will leave a documented record that cannot be ignored. The addition of a structured landing page, a multi-step verified registration flow, and a rigorous role-based access control system transforms EduVoice from a community forum into a trusted civic infrastructure tool — one that education ministries, school administrators, teachers, and parents can all rely on with confidence. Built correctly, it becomes one of the most valuable civic data sources an education ministry could have. |
+| --- |
+
+*End of Document — Version 2.0*
+
+EduVoice — Confidential Platform Specification v2.0

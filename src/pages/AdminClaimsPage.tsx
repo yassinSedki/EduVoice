@@ -107,7 +107,7 @@ export default function AdminClaimsPage() {
                         className="text-[10px] font-semibold px-2 py-0.5 rounded-full leading-none"
                         style={{ backgroundColor: scfg.bg, color: scfg.color }}
                       >
-                        {t(`claim_status.${statusKey(claim.claimStatus ?? 'Submitted')}`, claim.claimStatus)}
+                        {t(`claim_status.${statusKey(claim.claimStatus ?? 'Submitted')}`, { defaultValue: claim.claimStatus ?? 'Submitted' })}
                       </span>
                       {claim.claimCategory && (
                         <span className="text-[10px] font-medium text-[#5D6D7E] px-2 py-0.5 rounded-full bg-[#F3F4F6]">

@@ -1,4 +1,4 @@
-import { Link, useLocation, useNavigate } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import { GraduationCap, MessageSquare, FileWarning, Heart, User } from 'lucide-react'
 import { spaceConfig, type SpaceKey } from '../../data/mockData'
 import { useAppStore, getActiveUser } from '../../store/useAppStore'
@@ -22,7 +22,6 @@ const allNavItems: NavItem[] = [
 export default function BottomNav() {
   const { t } = useTranslation()
   const location     = useLocation()
-  const navigate     = useNavigate()
   const setSpace     = useAppStore((s) => s.setSpace)
   const activeUserId = useAppStore((s) => s.activeUserId)
 

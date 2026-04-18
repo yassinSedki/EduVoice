@@ -1,9 +1,9 @@
 {
   "translation": {
     "nav": {
-      "lounge": "Lounge",
+      "lounge": "Staff Room",
       "parents": "Parents Space",
-      "claims": "Lost & Found / Claims",
+      "claims": "Claims",
       "gratitude": "Gratitude Book",
       "schools": "My Schools",
       "notifications": "Notifications",
@@ -19,9 +19,9 @@
       "english": "English"
     },
     "spaces": {
-      "lounge": "Teachers' Lounge",
+      "lounge": "Staff Room",
       "parents": "Parents' Forum",
-      "claims": "Formal Claims",
+      "claims": "Claims",
       "gratitude": "Gratitude Wall",
       "lounge_subtitle": "A professional space for teachers",
       "parents_subtitle": "Parent voices, heard and tracked",
@@ -61,11 +61,11 @@
       },
       "empty": {
         "lounge_title": "No posts yet",
-        "lounge_sub": "Be the first to post in Teachers' Lounge",
+        "lounge_sub": "Be the first to post in Staff Room",
         "parents_title": "No parent posts yet",
         "parents_sub": "Be the first to post in Parents' Forum",
         "claims_title": "No claims filed yet",
-        "claims_sub": "Submit a formal claim to get it on record",
+        "claims_sub": "Submit a claim to get it on record",
         "gratitude_title": "No gratitude posts yet",
         "gratitude_sub": "Be the first to thank a teacher"
       },
@@ -83,7 +83,7 @@
         "posts_count": "{{count}} posts"
       },
       "bottom_nav": {
-        "lounge": "Lounge",
+        "lounge": "Staff Room",
         "parents": "Parents",
         "claims": "Claims",
         "gratitude": "Gratitude",
@@ -103,7 +103,7 @@
     "my_posts": {
       "title": "My Posts",
       "filter_all": "All",
-      "filter_lounge": "Lounge",
+      "filter_lounge": "Staff Room",
       "filter_parents": "Parents",
       "filter_claims": "Claims",
       "filter_gratitude": "Gratitude",
@@ -188,13 +188,13 @@
       "spaces": {
         "label": "Four dedicated spaces",
         "heading": "One platform for every voice in education.",
-        "lounge_name": "Teachers' Lounge",
+        "lounge_name": "Staff Room",
         "lounge_desc": "A collegial space where teachers share experiences, voice challenges, and support each other.",
         "lounge_tag": "Burnout",
         "parents_name": "Parents' Forum",
         "parents_desc": "A structured channel for parents to raise concerns, make suggestions, and track school responses.",
         "parents_tag": "Academic Concern",
-        "claims_name": "Formal Claims",
+        "claims_name": "Claims",
         "claims_desc": "An official, traceable channel for filing complaints to education authorities with full lifecycle tracking.",
         "claims_tag": "Under Review",
         "gratitude_name": "Gratitude Wall",
@@ -215,7 +215,7 @@
         "traceable_heading": "Traceable to real schools",
         "traceable_body": "Every post links to a verified school and user. Anonymous options exist — but the institution is always shown.",
         "safe_heading": "Safe and moderated",
-        "safe_body": "Community moderators review content. Formal claims create permanent, tamper-proof records for authorities."
+        "safe_body": "Community moderators review content. Claims create permanent, tamper-proof records for authorities."
       },
       "cta": {
         "heading": "Ready to make your school's voice count?",
@@ -246,7 +246,7 @@
       "role_parent": "Parent",
       "role_admin": "Education Authority",
       "teacher_desc": "Full access to all spaces, can post claims and comment everywhere.",
-      "parent_desc": "Access to Parents' Forum and Gratitude Wall. Cannot access Claims or Teachers' Lounge interactions.",
+      "parent_desc": "Access to Parents' Forum and Gratitude Wall. Cannot access Claims or Staff Room interactions.",
       "admin_desc": "Full access including the Authority Panel to manage and respond to claims.",
       "sign_in_arrow": "Sign in →",
       "no_account": "Don't have an account?",

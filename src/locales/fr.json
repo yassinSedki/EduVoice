@@ -1,9 +1,9 @@
 {
   "translation": {
     "nav": {
-      "lounge": "Espace Détente",
+      "lounge": "Salle des profs",
       "parents": "Espace Parents",
-      "claims": "Objets Perdus / Réclamations",
+      "claims": "Réclamations",
       "gratitude": "Livre de Gratitude",
       "schools": "Mes Écoles",
       "notifications": "Notifications",
@@ -21,7 +21,7 @@
     "spaces": {
       "lounge": "Salle des enseignants",
       "parents": "Forum des parents",
-      "claims": "Réclamations formelles",
+      "claims": "Réclamations",
       "gratitude": "Mur de gratitude",
       "lounge_subtitle": "Un espace professionnel pour les enseignants",
       "parents_subtitle": "Les voix des parents, entendues et suivies",
@@ -65,7 +65,7 @@
         "parents_title": "Aucune publication de parent",
         "parents_sub": "Soyez le premier à publier dans le Forum des parents",
         "claims_title": "Aucune réclamation déposée",
-        "claims_sub": "Déposez une réclamation formelle pour l'enregistrer",
+        "claims_sub": "Déposez une réclamation pour l'enregistrer",
         "gratitude_title": "Aucune publication de gratitude",
         "gratitude_sub": "Soyez le premier à remercier un enseignant"
       },
@@ -83,7 +83,7 @@
         "posts_count": "{{count}} publications"
       },
       "bottom_nav": {
-        "lounge": "Détente",
+        "lounge": "Profs",
         "parents": "Parents",
         "claims": "Réclamations",
         "gratitude": "Gratitude",
@@ -103,7 +103,7 @@
     "my_posts": {
       "title": "Mes publications",
       "filter_all": "Tout",
-      "filter_lounge": "Détente",
+      "filter_lounge": "Salle des profs",
       "filter_parents": "Parents",
       "filter_claims": "Réclamations",
       "filter_gratitude": "Gratitude",
@@ -194,7 +194,7 @@
         "parents_name": "Forum des parents",
         "parents_desc": "Un canal structuré permettant aux parents de soulever des préoccupations, faire des suggestions et suivre les réponses de l'école.",
         "parents_tag": "Préoccupation académique",
-        "claims_name": "Réclamations formelles",
+        "claims_name": "Réclamations",
         "claims_desc": "Un canal officiel et traçable pour déposer des plaintes auprès des autorités éducatives avec un suivi complet.",
         "claims_tag": "En cours d'examen",
         "gratitude_name": "Mur de gratitude",
@@ -215,7 +215,7 @@
         "traceable_heading": "Traçable aux vraies écoles",
         "traceable_body": "Chaque publication est liée à une école et un utilisateur vérifiés. Les options anonymes existent — mais l'institution est toujours affichée.",
         "safe_heading": "Sûr et modéré",
-        "safe_body": "Les modérateurs communautaires examinent le contenu. Les réclamations formelles créent des enregistrements permanents et infalsifiables pour les autorités."
+        "safe_body": "Les modérateurs communautaires examinent le contenu. Les réclamations créent des enregistrements permanents et infalsifiables pour les autorités."
       },
       "cta": {
         "heading": "Prêt à faire entendre la voix de votre école ?",

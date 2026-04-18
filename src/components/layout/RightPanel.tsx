@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next'
 const trendingTopics = [
   { tagKey: 'Burnout',        posts: 23 },
   { tagKey: 'Resource_Gap',   posts: 18 },
-  { tagKey: 'Student_Welfare',posts: 14 },
+  { tagKey: 'Pupil_Welfare',posts: 14 },
   { tagKey: 'Pedagogy',       posts: 11 },
   { tagKey: 'Infrastructure', posts: 9  },
 ]

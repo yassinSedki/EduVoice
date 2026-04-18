@@ -142,7 +142,7 @@
       "Pedagogy": "Pedagogy",
       "Resource_Gap": "Resource Gap",
       "Achievement": "Achievement",
-      "Student_Welfare": "Student Welfare",
+      "Pupil_Welfare": "Pupil Welfare",
       "Policy_Impact": "Policy Impact",
       "Academic_Concern": "Academic Concern",
       "Infrastructure": "Infrastructure",
@@ -266,7 +266,7 @@
         "teacher_label": "I am a Teacher",
         "teacher_desc": "Licensed educator at a public or private school",
         "parent_label": "I am a Parent",
-        "parent_desc": "Parent or guardian of an enrolled student",
+        "parent_desc": "Parent or guardian of an enrolled pupil",
         "admin_link": "I am a School Administrator — request access",
         "next": "Next"
       },

@@ -27,7 +27,7 @@ EduVoice serves five distinct user types, each with their own verified role, acc
 | **Feature** | **Description** |
 | --- | --- |
 | **Teachers** | Licensed educators working in public or private schools. Can post in Teachers' Lounge, file Formal Claims, and receive Gratitude posts. |
-| **Parents** | Parents or legal guardians of enrolled students. Can post in Parents' Forum and the Gratitude Wall. |
+| **Parents** | Parents or legal guardians of enrolled pupils. Can post in Parents' Forum and the Gratitude Wall. |
 | **School Administrators** | Principals and deputy principals. Read-only across all spaces at their school. Can post official responses to claims and parent concerns. |
 | **District Supervisors** | Regional education officers. Access to district-wide analytics dashboard and escalated claims. |
 | **Ministry Officials** | National-level access. Full read access everywhere plus the national analytics dashboard. Cannot post content. |
@@ -111,7 +111,7 @@ Heading: 'Which school are you part of?' A live-search input filters the officia
 
 For Teachers: Two selectable options are shown as cards. Option A: 'Enter your educator registration number' — a single text input. Option B: 'Verify via institutional email' — an input for their @education.gov email address with a 'Send verification email' button. A note below reads: 'Your account will be in Pending status until verification is confirmed. You can browse the platform but cannot post.' Submit button.
 
-For Parents: Fields for the child's full name and their national school enrollment number. Explanatory text: 'This links your account to a verified enrolled student. Your child's data is never shared publicly.' Submit button.
+For Parents: Fields for the child's full name and their national school enrollment number. Explanatory text: 'This links your account to a verified enrolled pupil. Your child's data is never shared publicly.' Submit button.
 
 ### **Step 5 — Success Screen**
 
@@ -213,9 +213,9 @@ EduVoice is organized into four distinct spaces, each with its own purpose, tone
 | --- | --- |
 | **Burnout** | Posts about stress, exhaustion, or emotional difficulty in the job. |
 | **Pedagogy** | Teaching methods, lesson design, classroom strategies. |
-| **Student Welfare** | Concerns about individual or group student wellbeing. |
+| **pupil Welfare** | Concerns about individual or group pupil wellbeing. |
 | **Policy Impact** | How government or school policy decisions affect teaching. |
-| **Achievement** | Positive outcomes, student success stories, personal wins. |
+| **Achievement** | Positive outcomes, pupil success stories, personal wins. |
 | **Resource Gap** | Missing materials, outdated equipment, underfunded classrooms. |
 
 ### **Key Features**
@@ -358,7 +358,7 @@ Any user can report any post. Report categories: Personal Attack, Misinformation
 
 ## **9.3  Content Rules**
 
-- No naming individual teachers or students negatively in the Parents' Forum.
+- No naming individual teachers or pupils negatively in the Parents' Forum.
 
 - No political content unrelated to education policy.
 
@@ -416,7 +416,7 @@ Teachers and school administrators can exchange private messages. Parents can me
 
 ## **11.3  Weekly Discussion Prompt**
 
-Every Monday, a moderated discussion question is posted to the Teachers' Lounge and Parents' Forum. Examples: 'What does a good parent-teacher relationship look like?', 'What is the biggest barrier to student wellbeing in your school?'
+Every Monday, a moderated discussion question is posted to the Teachers' Lounge and Parents' Forum. Examples: 'What does a good parent-teacher relationship look like?', 'What is the biggest barrier to pupil wellbeing in your school?'
 
 ## **11.4  Notification System**
 

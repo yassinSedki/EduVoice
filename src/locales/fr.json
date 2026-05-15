@@ -10,7 +10,13 @@
       "my_posts": "Mes Publications",
       "logout": "Se Déconnecter",
       "spaces": "Espaces",
-      "my_activity": "Mon Activité"
+      "my_activity": "Mon Activité",
+      "authority": "Autorité",
+      "authority_panel": "Panneau d'autorité",
+      "role_teacher": "Enseignant",
+      "role_parent": "Parent",
+      "role_admin": "Autorité éducative",
+      "verified": "Vérifié ✓"
     },
     "header": {
       "language": "Langue",

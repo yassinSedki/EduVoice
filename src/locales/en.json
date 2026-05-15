@@ -10,7 +10,13 @@
       "my_posts": "My Posts",
       "logout": "Log Out",
       "spaces": "Spaces",
-      "my_activity": "My Activity"
+      "my_activity": "My Activity",
+      "authority": "Authority",
+      "authority_panel": "Authority Panel",
+      "role_teacher": "Teacher",
+      "role_parent": "Parent",
+      "role_admin": "Authority",
+      "verified": "Verified ✓"
     },
     "header": {
       "language": "Language",

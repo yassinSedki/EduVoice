@@ -10,7 +10,13 @@
       "my_posts": "منشوراتي",
       "logout": "تسجيل الخروج",
       "spaces": "المساحات",
-      "my_activity": "نشاطي"
+      "my_activity": "نشاطي",
+      "authority": "السلطة",
+      "authority_panel": "لوحة السلطة",
+      "role_teacher": "معلم",
+      "role_parent": "ولي أمر",
+      "role_admin": "سلطة تعليمية",
+      "verified": "موثق ✓"
     },
     "header": {
       "language": "اللغة",

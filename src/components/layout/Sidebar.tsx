@@ -9,10 +9,10 @@ const myActivityItems = [
   { label: 'Notifications', icon: Bell,     href: '/app/notifications' },
 ]
 
-const roleColors: Record<string, { bg: string; color: string; label: string }> = {
-  teacher: { bg: '#D6EAF8', color: '#1A5276', label: 'Teacher' },
-  parent:  { bg: '#D5F5E3', color: '#1E8449', label: 'Parent'  },
-  admin:   { bg: '#FADBD8', color: '#922B21', label: 'Authority' },
+const roleColors: Record<string, { bg: string; color: string }> = {
+  teacher: { bg: '#D6EAF8', color: '#1A5276' },
+  parent:  { bg: '#D5F5E3', color: '#1E8449' },
+  admin:   { bg: '#FADBD8', color: '#922B21' },
 }
 
 export default function Sidebar() {
@@ -147,7 +147,7 @@ export default function Sidebar() {
       {role === 'admin' && (
         <nav className="px-3 pt-3 pb-2">
           <p className="px-2 mb-2 text-[10px] font-semibold tracking-widest text-gray-400 uppercase">
-            Authority
+            {t('nav.authority')}
           </p>
           <ul className="space-y-0.5">
             <li>
@@ -165,7 +165,7 @@ export default function Sidebar() {
                   className="shrink-0"
                   style={{ color: isRouteActive('/app/admin') ? '#922B21' : '#6B7280' }}
                 />
-                <span className="flex-1">Authority Panel</span>
+                <span className="flex-1">{t('nav.authority_panel')}</span>
               </Link>
             </li>
           </ul>
@@ -206,10 +206,10 @@ export default function Sidebar() {
                 className="inline-block px-1.5 py-0.5 rounded text-[10px] font-semibold uppercase tracking-wide"
                 style={{ backgroundColor: rc.bg, color: rc.color }}
               >
-                {rc.label}
+                {t(`nav.role_${role}`)}
               </span>
               {activeUser.verified && (
-                <span className="text-[10px] text-green-600 font-medium">Verified ✓</span>
+                <span className="text-[10px] text-green-600 font-medium">{t('nav.verified')}</span>
               )}
             </div>
           </div>

@@ -264,7 +264,8 @@
         "role": "Role",
         "info": "Info",
         "school": "School",
-        "verify": "Verify"
+        "verify": "Verify",
+        "access": "Access"
       },
       "step1": {
         "heading": "Who are you?",
@@ -273,8 +274,23 @@
         "teacher_desc": "Licensed educator at a public or private school",
         "parent_label": "I am a Parent",
         "parent_desc": "Parent or guardian of an enrolled pupil",
+        "admin_label": "I am a School Administrator",
+        "admin_desc_full": "Request access to the Authority Panel to manage and respond to claims.",
         "admin_link": "I am a School Administrator — request access",
         "next": "Next"
+      },
+      "step3_admin": {
+        "heading": "Administrator access request",
+        "subtitle": "Provide your authority details to request access to the Administration Panel.",
+        "wilaya_label": "Wilaya under your authority",
+        "wilaya_placeholder": "Select wilaya…",
+        "position_label": "Position / Title",
+        "position_placeholder": "e.g. District Education Officer",
+        "auth_code_label": "Ministry authorisation code",
+        "auth_code_placeholder": "e.g. AUTH-2026-SFAX-001",
+        "auth_code_hint": "Issued by the Ministry of Education. Contact your regional office if you don't have one.",
+        "back": "Back",
+        "submit": "Request Access & Enter"
       },
       "step2": {
         "heading": "Personal information",
@@ -332,8 +348,10 @@
         "welcome": "Welcome to EduVoice, {{name}}!",
         "teacher_msg": "Your educator account has been created. Start engaging with parents, sharing updates, and building your classroom community.",
         "parent_msg": "Your parent account is ready. Stay informed about your child's progress and connect directly with their teachers.",
+        "admin_msg": "Your administrator account has been verified. You now have full access to the Authority Panel.",
         "linked_to": "Linked to {{school}}",
-        "explore": "Explore EduVoice"
+        "explore": "Explore EduVoice",
+        "enter_admin": "Enter Authority Panel"
       },
       "already_have": "Already have an account?",
       "sign_in": "Sign in"

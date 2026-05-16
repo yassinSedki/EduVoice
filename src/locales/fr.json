@@ -264,7 +264,8 @@
         "role": "Rôle",
         "info": "Info",
         "school": "École",
-        "verify": "Vérifier"
+        "verify": "Vérifier",
+        "access": "Accès"
       },
       "step1": {
         "heading": "Qui êtes-vous ?",
@@ -273,8 +274,23 @@
         "teacher_desc": "Éducateur(trice) agréé(e) dans une école publique ou privée",
         "parent_label": "Je suis parent",
         "parent_desc": "Parent ou tuteur d'un élève inscrit",
+        "admin_label": "Je suis administrateur scolaire",
+        "admin_desc_full": "Demandez l'accès au panneau d'autorité pour gérer et répondre aux réclamations.",
         "admin_link": "Je suis directeur d'école — demander l'accès",
         "next": "Suivant"
+      },
+      "step3_admin": {
+        "heading": "Demande d'accès administrateur",
+        "subtitle": "Fournissez vos informations d'autorité pour demander l'accès au panneau d'administration.",
+        "wilaya_label": "Wilaya sous votre autorité",
+        "wilaya_placeholder": "Sélectionner une wilaya…",
+        "position_label": "Poste / Titre",
+        "position_placeholder": "ex. Responsable de l'éducation de district",
+        "auth_code_label": "Code d'autorisation ministériel",
+        "auth_code_placeholder": "ex. AUTH-2026-SFAX-001",
+        "auth_code_hint": "Délivré par le Ministère de l'Éducation. Contactez votre bureau régional si vous ne l'avez pas.",
+        "back": "Retour",
+        "submit": "Demander l'accès et entrer"
       },
       "step2": {
         "heading": "Informations personnelles",
@@ -332,8 +348,10 @@
         "welcome": "Bienvenue sur EduVoice, {{name}} !",
         "teacher_msg": "Votre compte éducateur a été créé. Commencez à interagir avec les parents, partager des mises à jour et construire votre communauté de classe.",
         "parent_msg": "Votre compte parent est prêt. Restez informé des progrès de votre enfant et connectez-vous directement avec ses enseignants.",
+        "admin_msg": "Votre compte administrateur a été vérifié. Vous avez maintenant accès au panneau d'autorité.",
         "linked_to": "Lié à {{school}}",
-        "explore": "Explorer EduVoice"
+        "explore": "Explorer EduVoice",
+        "enter_admin": "Accéder au panneau d'autorité"
       },
       "already_have": "Vous avez déjà un compte ?",
       "sign_in": "Se connecter"

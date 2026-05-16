@@ -1,22 +1,15 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import {
-  Check,
-  CheckCircle,
-  GraduationCap,
-  Users,
-  Search,
-  ChevronRight,
-  ChevronLeft,
-  Mail,
-  ChevronDown,
-  X,
+  Check, CheckCircle, GraduationCap, Users, ShieldCheck,
+  Search, ChevronRight, ChevronLeft, Mail, ChevronDown, X,
 } from 'lucide-react';
 import { TUNISIAN_WILAYAS } from '../data/mockData';
+import { useAppStore } from '../store/useAppStore';
 import { useTranslation } from 'react-i18next';
 
 // ─── Types ────────────────────────────────────────────────────────
-type Role = 'teacher' | 'parent' | null;
+type Role = 'teacher' | 'parent' | 'admin' | null;
 type VerifyMethod = 'registration' | 'email' | null;
 
 interface School {
@@ -118,6 +111,7 @@ function StepIndicator({ current, labels }: { current: number; labels: string[] 
 export default function RegisterPage() {
   const { t } = useTranslation();
   const navigate = useNavigate();
+  const login    = useAppStore((s) => s.login);
 
   // Wizard state
   const [step, setStep] = useState(1);
@@ -145,6 +139,12 @@ export default function RegisterPage() {
   const [childName, setChildName]       = useState('');
   const [enrollNum, setEnrollNum]       = useState('');
 
+  // Admin step
+  const [adminDistrict, setAdminDistrict]     = useState('');
+  const [adminWilayaOpen, setAdminWilayaOpen] = useState(false);
+  const [adminPosition, setAdminPosition]     = useState('');
+  const [adminAuthCode, setAdminAuthCode]     = useState('');
+
   const strength = getPasswordStrength(password);
 
   // Step 3 — filtered schools
@@ -160,12 +160,9 @@ export default function RegisterPage() {
   const next = () => setStep((s) => s + 1);
   const back = () => setStep((s) => s - 1);
 
-  const stepLabels = [
-    t('register.steps.role'),
-    t('register.steps.info'),
-    t('register.steps.school'),
-    t('register.steps.verify'),
-  ];
+  const stepLabels = role === 'admin'
+    ? [t('register.steps.role'), t('register.steps.info'), t('register.steps.access')]
+    : [t('register.steps.role'), t('register.steps.info'), t('register.steps.school'), t('register.steps.verify')];
 
   // ── STEP 1: Role ─────────────────────────────────────────────────
   const Step1 = (
@@ -233,11 +230,27 @@ export default function RegisterPage() {
         </button>
       </div>
 
-      <p className="text-center text-xs text-[#5D6D7E] mb-6">
-        <a href="#" className="hover:underline" onClick={(e) => e.preventDefault()}>
-          {t('register.step1.admin_link')}
-        </a>
-      </p>
+      <button
+        type="button"
+        onClick={() => setRole('admin')}
+        className={[
+          'relative w-full rounded-2xl p-4 flex items-center gap-4 text-left transition-all cursor-pointer mb-5',
+          role === 'admin'
+            ? 'border-2 border-[#922B21] bg-[#FDEDEC]'
+            : 'border border-[#E5E7EB] hover:border-[#D1D5DB] bg-white',
+        ].join(' ')}
+      >
+        {role === 'admin' && (
+          <CheckCircle size={18} className="absolute top-3 right-3 text-[#922B21]" strokeWidth={2} />
+        )}
+        <div className="w-10 h-10 rounded-full bg-[#FADBD8] flex items-center justify-center shrink-0">
+          <ShieldCheck size={20} style={{ color: '#922B21' }} strokeWidth={1.6} />
+        </div>
+        <div>
+          <p className="font-semibold text-sm text-[#1C2833]">{t('register.step1.admin_label')}</p>
+          <p className="text-xs text-[#5D6D7E] mt-0.5">{t('register.step1.admin_desc_full')}</p>
+        </div>
+      </button>
 
       <div className="flex justify-end">
         <button
@@ -507,6 +520,99 @@ export default function RegisterPage() {
     </div>
   );
 
+  // ── STEP 3 (Admin): Access Request ───────────────────────────────
+  const Step3Admin = (
+    <div className="slide-down">
+      <h2 className="font-display text-xl font-bold text-[#1C2833] mb-1">
+        {t('register.step3_admin.heading')}
+      </h2>
+      <p className="text-xs text-[#5D6D7E] mb-5">
+        {t('register.step3_admin.subtitle')}
+      </p>
+
+      {/* Wilaya selector */}
+      <div className="mb-4">
+        <label className="label-caps mb-1.5 block">{t('register.step3_admin.wilaya_label')}</label>
+        <div className="relative">
+          <button
+            type="button"
+            onClick={() => setAdminWilayaOpen((v) => !v)}
+            className="w-full flex items-center justify-between px-3 py-2.5 border border-[#E5E7EB] rounded-xl bg-white text-sm focus:outline-none hover:border-[#D1D5DB] transition-colors"
+          >
+            <span className={adminDistrict ? 'text-[#1C2833]' : 'text-[#9CA3AF]'}>
+              {adminDistrict || t('register.step3_admin.wilaya_placeholder')}
+            </span>
+            <div className="flex items-center gap-1.5">
+              {adminDistrict && (
+                <button type="button" onClick={(e) => { e.stopPropagation(); setAdminDistrict(''); }} className="text-[#9CA3AF] hover:text-[#5D6D7E]">
+                  <X size={14} />
+                </button>
+              )}
+              <ChevronDown size={15} className={`text-[#5D6D7E] transition-transform duration-150 ${adminWilayaOpen ? 'rotate-180' : ''}`} />
+            </div>
+          </button>
+          {adminWilayaOpen && (
+            <div className="absolute top-full mt-1 left-0 right-0 bg-white border border-[#E5E7EB] rounded-xl shadow-md z-20 max-h-48 overflow-y-auto slide-down">
+              {TUNISIAN_WILAYAS.map((w) => (
+                <button
+                  key={w}
+                  type="button"
+                  onClick={() => { setAdminDistrict(w); setAdminWilayaOpen(false); }}
+                  className={`w-full text-start px-4 py-2.5 text-sm transition-colors hover:bg-[#F8F9FA] ${adminDistrict === w ? 'font-semibold text-[#922B21] bg-[#FDEDEC]' : 'text-[#1C2833]'}`}
+                >
+                  {w}
+                </button>
+              ))}
+            </div>
+          )}
+        </div>
+      </div>
+
+      {/* Position */}
+      <div className="mb-4">
+        <label className="label-caps block mb-1.5">{t('register.step3_admin.position_label')}</label>
+        <input
+          type="text"
+          value={adminPosition}
+          onChange={(e) => setAdminPosition(e.target.value)}
+          placeholder={t('register.step3_admin.position_placeholder')}
+          className="px-3 py-2.5 border border-[#E5E7EB] rounded-xl w-full text-sm text-[#1C2833] placeholder:text-[#9CA3AF] focus:outline-none focus:border-[#922B21] transition-colors bg-white"
+        />
+      </div>
+
+      {/* Auth code */}
+      <div className="mb-6">
+        <label className="label-caps block mb-1.5">{t('register.step3_admin.auth_code_label')}</label>
+        <input
+          type="text"
+          value={adminAuthCode}
+          onChange={(e) => setAdminAuthCode(e.target.value)}
+          placeholder={t('register.step3_admin.auth_code_placeholder')}
+          className="px-3 py-2.5 border border-[#E5E7EB] rounded-xl w-full text-sm text-[#1C2833] placeholder:text-[#9CA3AF] focus:outline-none focus:border-[#922B21] transition-colors bg-white"
+        />
+        <p className="text-[10px] text-[#5D6D7E] mt-1">{t('register.step3_admin.auth_code_hint')}</p>
+      </div>
+
+      <div className="flex justify-between">
+        <button
+          type="button"
+          onClick={back}
+          className="inline-flex items-center gap-2 border border-[#E5E7EB] text-[#5D6D7E] px-5 py-2.5 rounded-xl text-sm font-medium hover:bg-[#F8F9FA] transition-colors cursor-pointer"
+        >
+          <ChevronLeft size={15} /> {t('register.step3_admin.back')}
+        </button>
+        <button
+          type="button"
+          disabled={!adminDistrict || !adminPosition}
+          onClick={() => { login('u6'); navigate('/app/admin'); }}
+          className="inline-flex items-center gap-2 bg-[#922B21] disabled:opacity-40 text-white px-6 py-2.5 rounded-xl font-semibold text-sm hover:bg-[#7B241C] disabled:cursor-not-allowed transition-colors cursor-pointer"
+        >
+          <ShieldCheck size={15} /> {t('register.step3_admin.submit')}
+        </button>
+      </div>
+    </div>
+  );
+
   // ── STEP 4: Verification ──────────────────────────────────────────
   const Step4Teacher = (
     <div className="slide-down">
@@ -673,7 +779,7 @@ export default function RegisterPage() {
 
   const Step4 = role === 'teacher' ? Step4Teacher : Step4Parent;
 
-  // ── STEP 5: Success ───────────────────────────────────────────────
+  // ── STEP 5: Success (teacher / parent only) ───────────────────────
   const displayName = fullName.split(' ')[0] || 'there';
 
   const Step5 = (
@@ -692,6 +798,7 @@ export default function RegisterPage() {
           : t('register.step5.parent_msg')}
       </p>
 
+
       {selectedSchool && (
         <div className="mt-4 inline-flex items-center gap-1.5 bg-[#D6EAF8] text-[#1A5276] text-xs px-3 py-1 rounded-full font-medium">
           <CheckCircle size={12} strokeWidth={2.5} />
@@ -701,7 +808,10 @@ export default function RegisterPage() {
 
       <button
         type="button"
-        onClick={() => navigate('/app/lounge')}
+        onClick={() => {
+          if (role === 'parent') { login('u3'); navigate('/app/parents'); }
+          else { login('u1'); navigate('/app/lounge'); }
+        }}
         className="mt-8 bg-[#1A5276] text-white px-8 py-2.5 rounded-xl font-semibold text-sm hover:bg-[#154360] transition-colors cursor-pointer"
       >
         {t('register.step5.explore')}
@@ -710,7 +820,9 @@ export default function RegisterPage() {
   );
 
   // ── Render ────────────────────────────────────────────────────────
-  const stepContent = [Step1, Step2, Step3, Step4, Step5];
+  const stepContent = role === 'admin'
+    ? [Step1, Step2, Step3Admin]
+    : [Step1, Step2, Step3, Step4, Step5];
 
   return (
     <div className="bg-[#F8F9FA] min-h-screen py-12 px-4 font-body">
@@ -723,8 +835,8 @@ export default function RegisterPage() {
         <p className="label-caps mt-1">{t('register.tagline')}</p>
       </div>
 
-      {/* Step indicator — only for steps 1–4 */}
-      {step <= 4 && <StepIndicator current={step} labels={stepLabels} />}
+      {/* Step indicator */}
+      {step <= (role === 'admin' ? 3 : 4) && <StepIndicator current={step} labels={stepLabels} />}
 
       {/* Card */}
       <div className="bg-white rounded-2xl border border-[#E5E7EB] p-8 w-full max-w-md mx-auto reveal-up">
@@ -732,7 +844,7 @@ export default function RegisterPage() {
       </div>
 
       {/* Login link */}
-      {step <= 4 && (
+      {step <= (role === 'admin' ? 3 : 4) && (
         <p className="mt-6 text-center text-sm text-[#5D6D7E] reveal-up-2">
           {t('register.already_have')}{' '}
           <a href="/login" className="text-[#1A5276] font-medium hover:underline">

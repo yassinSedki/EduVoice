@@ -39,7 +39,12 @@ export default function LoginPage() {
   function handleLogin(userId: string) {
     login(userId)
     const user = getActiveUser(userId)
-    navigate(user.role === 'parent' ? '/app/parents' : '/app/lounge')
+    const destinations: Record<string, string> = {
+      teacher: '/app/lounge',
+      parent:  '/app/parents',
+      admin:   '/app/admin',
+    }
+    navigate(destinations[user.role] ?? '/app/lounge')
   }
 
   return (
